@@ -1,0 +1,17 @@
+.card-holder {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    border: 4px solid transparent;
+    transform: skewX(10deg);
+    height: 500px;
+    width: 30%;
+    background-color: red;
+    border: 2px solid blue;
+}
+
+.card:hover {
+    width: 50%;
+}
