@@ -5,7 +5,7 @@ function Navbar(props) {
     return (
         <div>
             <Link>News</Link>
-            <Link>Teams</Link>
+            <Link to="/LoL/teams">Teams</Link>
         </div>
     );
 }

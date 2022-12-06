@@ -1,0 +1,13 @@
+.Articles {
+    display: flex;
+    width: 100%;
+    border: 1px solid red;
+    margin: 1rem 0;
+    &__title {
+    }
+    &__user-info-container {
+    }
+    &__user-info-container--flex {
+        display: flex;
+    }
+}
