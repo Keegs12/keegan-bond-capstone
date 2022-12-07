@@ -11,6 +11,7 @@ function Header(props) {
                     Home
                 </Link>
                 <Link to="/">About</Link>
+                <Link to="/">Sign Up</Link>
             </div>
         </div>
     );

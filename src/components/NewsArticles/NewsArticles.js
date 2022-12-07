@@ -6,6 +6,7 @@ function NewsArticles({ articles }) {
         return (
             <div className="Articles">
                 <h2 className="Articles__title">{article.article_title}</h2>
+
                 <div className="Articles__user-info-container">
                     <p>{article.description}</p>
                     <div className="Articles__user-info-container--flex">

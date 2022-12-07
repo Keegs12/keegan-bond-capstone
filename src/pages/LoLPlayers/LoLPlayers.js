@@ -2,6 +2,7 @@ import "./LoLPlayers.scss";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Player from "../../components/Player/Player";
 
 function LoLPlayers(props) {
     const [team, setTeam] = useState([]);
@@ -14,7 +15,7 @@ function LoLPlayers(props) {
             return;
         }
         axios
-            .get(`http://localhost:8080/teams/${selectedTeamId}`)
+            .get(`http://localhost:8080/lol/teams/${selectedTeamId}`)
             .then((response) => {
                 setTeam(response.data);
             })
@@ -23,7 +24,11 @@ function LoLPlayers(props) {
             });
     }, [selectedTeamId]);
     console.log(team);
-    return <div>abcd</div>;
+    return (
+        <>
+            <Player info={team} />
+        </>
+    );
 }
 
 export default LoLPlayers;
