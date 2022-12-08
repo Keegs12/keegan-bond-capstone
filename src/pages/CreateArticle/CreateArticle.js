@@ -1,14 +1,15 @@
 import "./CreateArticle.scss";
 import axios from "axios";
+import Input from "../../components/Input/Input";
 
-function CreateArticle(props) {
+function CreateArticle({ userData }) {
     const onSubmit = (e) => {
         e.preventDefault();
-
+        console.log(userData.first_name);
         const newArticle = {
             article_title: e.target.articleTitle.value,
             description: e.target.description.value,
-            author: e.target.author.value,
+            author: e.target.author.value || userData.first_name,
             image: e.target.image.value,
         };
 
@@ -22,33 +23,31 @@ function CreateArticle(props) {
     return (
         <div>
             <form onSubmit={onSubmit}>
-                <label htmlFor="articleTitle">Article Headline/Title</label>
-                <input
+                <Input
                     type="text"
-                    id="articleTitle"
                     name="articleTitle"
                     placeholder="Enter Article Title"
-                ></input>
+                    label="Article Headline/Title"
+                />
                 <label htmlFor="description">Description</label>
                 <textarea
                     id="description"
                     name="description"
                     placeholder="Enter description article"
                 ></textarea>
-                <label htmlFor="author">Author</label>
-                <input
-                    type="text"
-                    id="author"
-                    name="author"
-                    placeholder="Please Enter your Name"
-                ></input>
-                <label htmlFor="image">Image</label>
-                <input
-                    type="file"
-                    id="image"
-                    name="image"
-                    accept="image/png, image/jpeg"
-                ></input>
+
+                {userData ? (
+                    ""
+                ) : (
+                    <Input
+                        type="text"
+                        name="author"
+                        placeholder="Please Enter your Name"
+                        label="Author"
+                    />
+                )}
+
+                <Input type="file" name="image" label="Image" />
                 <button type="submit">Create Article</button>
             </form>
         </div>

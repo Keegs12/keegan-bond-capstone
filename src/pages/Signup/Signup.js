@@ -15,7 +15,7 @@ function Signup(props) {
             first_name: e.target.first_name.value,
             last_name: e.target.last_name.value,
             email: e.target.email.value,
-            phone: e.target.phone_number.value,
+            phone: e.target.phone.value,
             address: e.target.address.value,
             password: e.target.password.value,
         };

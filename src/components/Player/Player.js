@@ -1,20 +1,17 @@
 import "./Player.scss";
-import ADC from "../../assets/roles/ADC.png";
 
-function Player({ info }) {
-    const players = info.players;
-    console.log(players);
-    if (!players) {
+function Player({ player, role }) {
+    if (!player) {
         return;
     }
-    return players.map((player) => {
-        return (
-            <div>
-                <img src={ADC}></img>
-                <img src={player.image_url}></img>
-            </div>
-        );
-    });
+    console.log(player[0].image_url);
+
+    return (
+        <div>
+            <img src={role}></img>
+            <img src={player[0].image_url}></img>
+        </div>
+    );
 }
 
 export default Player;

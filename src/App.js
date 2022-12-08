@@ -39,6 +39,13 @@ function App() {
             });
     }, []);
 
+    if (user === null) {
+        return (
+            <main className="dashboard">
+                <p>Loading...</p>
+            </main>
+        );
+    }
     console.log(user);
 
     return (
@@ -54,7 +61,7 @@ function App() {
                 ></Route>
                 <Route
                     path="/LoL/create-article"
-                    element={<CreateArticle />}
+                    element={<CreateArticle userData={user} />}
                 ></Route>
                 <Route path="/users/signup" element={<Signup />}></Route>
                 <Route path="/users/login" element={<Login />}></Route>

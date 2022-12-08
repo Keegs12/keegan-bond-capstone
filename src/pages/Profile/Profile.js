@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 function Profile({ userData }) {
     const [user, setUser] = useState(userData);
+
     const [failedAuth, setFailedAuth] = useState(false);
 
     const handleLogout = () => {
