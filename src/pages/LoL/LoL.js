@@ -5,6 +5,7 @@ import NewsArticles from "../../components/NewsArticles/NewsArticles";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import PostAdd from "../../components/PostAdd/PostAdd";
+import "./LoL.scss";
 function LoL(props) {
     const [articles, setArticles] = useState([]);
 
@@ -31,9 +32,14 @@ function LoL(props) {
     return (
         <>
             <Navbar />
-            <PostAdd />
-            <MainNewsArticle article={mainArticle} />
-            <NewsArticles articles={filteredArticles} />
+            <section className="LoL-Page">
+                <div className="Main-Article__container">
+                    <MainNewsArticle article={mainArticle} />
+                    <PostAdd />
+                </div>
+
+                <NewsArticles articles={filteredArticles} />
+            </section>
         </>
     );
 }

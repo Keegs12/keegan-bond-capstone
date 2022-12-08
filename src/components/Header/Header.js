@@ -2,7 +2,7 @@ import React from "react";
 import EsportsHubLogo from "../../assets/logo/EsportsLogo.jpg";
 import "./Header.scss";
 import { Link } from "react-router-dom";
-function Header(props) {
+function Header({ userData }) {
     return (
         <div className="Header">
             <img src={EsportsHubLogo} alt="website logo"></img>
@@ -11,7 +11,8 @@ function Header(props) {
                     Home
                 </Link>
                 <Link to="/">About</Link>
-                <Link to="/">Sign Up</Link>
+                <Link to="/users/signup">Sign Up</Link>
+                <Link to="/profile">Profile</Link>
             </div>
         </div>
     );

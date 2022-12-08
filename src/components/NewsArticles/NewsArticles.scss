@@ -1,13 +1,19 @@
+@use "../../styles/partials/colors" as *;
+
 .Articles {
     display: flex;
     width: 100%;
-    border: 1px solid red;
+    height: 175px;
+    border: 1px solid $light-grey;
+    border-radius: 2px;
     margin: 1rem 0;
+    background-color: white;
+
     &__title {
-    }
-    &__user-info-container {
-    }
-    &__user-info-container--flex {
-        display: flex;
+        font-size: 20px;
+        border-right: 1px solid $light-grey;
+        padding: 1rem;
+        width: 20%;
+        color: $black;
     }
 }

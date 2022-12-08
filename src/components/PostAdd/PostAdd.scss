@@ -1,0 +1,20 @@
+.PostAdd {
+    width: 25%;
+    height: 500px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../assets/backgrounds/add-background.png");
+    background-size: cover;
+    box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.3),
+        -2px -2px 0.5px rgba(0, 0, 0, 0.3);
+
+    background-repeat: no-repeat;
+
+    &__description {
+        text-align: center;
+        color: white;
+    }
+}

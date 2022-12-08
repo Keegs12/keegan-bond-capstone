@@ -1,0 +1,14 @@
+.LoL-Page {
+    padding: 0 5%;
+}
+.Main-Article__container {
+    display: flex;
+    gap: 2rem;
+}
+.News-Articles {
+    display: flex;
+
+    &__container {
+        width: 90%;
+    }
+}

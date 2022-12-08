@@ -1,5 +1,40 @@
+@use "../../styles/partials/colors" as *;
 .Main-Article {
+    position: relative;
+    width: 90%;
+    background-color: white;
+    &__tag {
+        position: absolute;
+        bottom: 225px;
+        color: white;
+        padding: 0 1rem;
+    }
+    &__image {
+        width: 100%;
+        height: 350px;
+    }
+    &__title {
+        position: absolute;
+        color: white;
+        bottom: 155px;
+        padding: 0 1rem;
+        width: 85%;
+    }
     &__user-info-container {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        padding: 0 1.5rem;
+    }
+    &__description {
+        --max-lines: 3;
+        color: $medium-grey;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: var(--max-lines);
+        width: 100%;
     }
 }

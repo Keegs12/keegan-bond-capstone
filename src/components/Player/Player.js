@@ -1,4 +1,5 @@
 import "./Player.scss";
+import ADC from "../../assets/roles/ADC.png";
 
 function Player({ info }) {
     const players = info.players;
@@ -9,6 +10,7 @@ function Player({ info }) {
     return players.map((player) => {
         return (
             <div>
+                <img src={ADC}></img>
                 <img src={player.image_url}></img>
             </div>
         );
