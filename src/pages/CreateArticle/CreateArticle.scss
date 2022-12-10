@@ -1,0 +1,29 @@
+@use "../../styles/partials/colors" as *;
+.Create-Article {
+    border: 1px solid red;
+    width: 30%;
+    margin: auto;
+    padding: 0 1rem;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);
+    &__title {
+        text-align: center;
+    }
+
+    &__description-container {
+        display: flex;
+        flex-direction: column;
+    }
+    &__description {
+        height: 150px;
+        border-radius: 4px;
+
+        &::placeholder {
+            padding: 0.5rem;
+        }
+        &:focus {
+            border: 1px solid $primary-red;
+        }
+    }
+}

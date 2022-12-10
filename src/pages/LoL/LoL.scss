@@ -1,3 +1,4 @@
+@use "../../styles/partials/colors" as *;
 .LoL-Page {
     padding: 0 5%;
 }
@@ -11,4 +12,13 @@
     &__container {
         width: 90%;
     }
+}
+
+.LoL__title {
+    margin: 2rem 6rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(0.25turn, $primary-red, $black);
+    border-image-slice: 1;
 }

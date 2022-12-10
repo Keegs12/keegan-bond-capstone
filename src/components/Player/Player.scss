@@ -1,0 +1,96 @@
+@use "../../styles/partials/sizing" as *;
+@use "../../styles/partials/colors" as *;
+.Players {
+    padding: 1rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    position: relative;
+
+    &__logo-role-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__role {
+        width: 50px;
+    }
+    &__league-logo {
+        width: 50px;
+    }
+    &__image {
+        height: 175px;
+        width: 100%;
+    }
+    &__next-image {
+        width: 27px;
+        height: 50px;
+    }
+    &__previous-image {
+        width: 27px;
+        height: 50px;
+    }
+    &__ign {
+        @include names-td;
+    }
+    &__name {
+        display: flex;
+        gap: 0.5rem;
+    }
+    &__first-name {
+        @include names-td;
+    }
+    &__last-name {
+        @include names-td;
+    }
+    &__name-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__card-info-container {
+        display: flex;
+        margin: 0.5rem 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border-top: 1px solid $gold;
+        padding-top: 1rem;
+    }
+    &__card-info {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+    }
+    &__label {
+        @include body-td;
+        margin: 0 0 0.5rem 0;
+        color: $black;
+    }
+    &__info {
+        @include body-td;
+        margin: 0;
+        color: $gold;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.Players-container {
+    display: flex;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5), -3px -3px 4px rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+    width: 17.5%;
+    padding: 1rem;
+    height: fit-content;
+    transition: 0.4s;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, $gold, $medium-grey) 1;
+
+    &:hover {
+        transform: scale(0.93, 0.93);
+        box-shadow: 3px 3px 7px 7px rgba(0, 0, 0, 0.25),
+            -3px -3px 7px 7px rgba(0, 0, 0, 0.22);
+    }
+}

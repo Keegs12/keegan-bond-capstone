@@ -1,15 +1,17 @@
 .PostAdd {
-    width: 25%;
+    width: 21%;
     height: 500px;
     border-radius: 2px;
     display: flex;
+    position: sticky;
+
     align-items: center;
     flex-direction: column;
     justify-content: center;
     background-image: url("../../assets/backgrounds/add-background.png");
     background-size: cover;
-    box-shadow: 2px 2px 0.5px rgba(0, 0, 0, 0.3),
-        -2px -2px 0.5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.5),
+        -1px -1px 5px 2px rgba(0, 0, 0, 0.5);
 
     background-repeat: no-repeat;
 

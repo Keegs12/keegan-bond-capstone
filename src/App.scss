@@ -1,5 +1,6 @@
 @use "./styles/partials/colors" as *;
 @use "./styles/partials/fonts" as *;
+@use "./styles/partials/responsive" as *;
 *,
 *::after,
 *::before {
@@ -9,77 +10,9 @@ body {
     background-color: $light-grey;
     font-weight: 400;
     font-family: "Barlow", sans-serif;
+    margin: 0;
 }
-.Articles {
-    &__user-info-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 65%;
-        border-right: 16px solid $light-grey;
-        padding: 0 1rem;
-    }
-    &__description-container {
-        display: flex;
-        gap: 1.5rem;
-    }
-    &__description {
-        --max-lines: 3;
-        color: $medium-grey;
-        display: -webkit-box;
-        overflow: hidden;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: var(--max-lines);
-        width: 85%;
-    }
-    &__tag {
-        color: $primary-red;
-    }
-    &__user-info-container--flex {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &__user-info-subcontainer {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-    &__profile-pic {
-        width: 25px;
-        height: 25px;
-        background-color: aquamarine;
-        border-radius: 50%;
-    }
-    &__author {
-        color: $black;
-    }
-    &__date {
-    }
-    &__media-container {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-    }
-    &__media-icon-background {
-        width: 32.5px;
-        height: 30px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $light-grey;
-        opacity: 0.5;
-    }
-    &__media-icon {
-        width: 20px;
-        height: 20px;
-    }
-    &__image-container {
-        width: 25%;
-    }
-    &__thumbnail {
-        width: 100%;
-        height: 100%;
-    }
+
+*::placeholder {
+    font-family: "Barlow";
 }

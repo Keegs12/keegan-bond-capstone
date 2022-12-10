@@ -15,7 +15,21 @@ import Profile from "./pages/Profile/Profile";
 function App() {
     const [user, setUser] = useState(null);
     const [failedAuth, setFailedAuth] = useState(false);
-
+    const [login, setLogin] = useState(false);
+    console.log(login);
+    const updateLogin = (loginInfo) => {
+        console.log(loginInfo);
+        if (loginInfo) {
+            return setLogin(true);
+        }
+    };
+    const logout = (failedAuth) => {
+        console.log(failedAuth);
+        if (!failedAuth) {
+            return setLogin(false);
+        }
+    };
+    console.log(login);
     useEffect(() => {
         const token = sessionStorage.getItem("token");
 
@@ -37,15 +51,8 @@ function App() {
                 console.log(error);
                 setFailedAuth(true);
             });
-    }, []);
+    }, [login]);
 
-    if (user === null) {
-        return (
-            <main className="dashboard">
-                <p>Loading...</p>
-            </main>
-        );
-    }
     console.log(user);
 
     return (
@@ -64,10 +71,13 @@ function App() {
                     element={<CreateArticle userData={user} />}
                 ></Route>
                 <Route path="/users/signup" element={<Signup />}></Route>
-                <Route path="/users/login" element={<Login />}></Route>
+                <Route
+                    path="/users/login"
+                    element={<Login updateLogin={updateLogin} />}
+                ></Route>
                 <Route
                     path="/profile"
-                    element={<Profile userData={user} />}
+                    element={<Profile userData={user} logout={logout} />}
                 ></Route>
             </Routes>
         </BrowserRouter>

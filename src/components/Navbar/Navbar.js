@@ -1,11 +1,15 @@
 import "./Navbar.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function Navbar(props) {
+function Navbar() {
     return (
-        <div>
-            <Link>News</Link>
-            <Link to="/LoL/teams">Teams</Link>
+        <div className="Navbar">
+            <NavLink className="Navbar__news" to="/LoL">
+                News
+            </NavLink>
+            <NavLink className="Navbar__teams " to="/LoL/teams">
+                Teams
+            </NavLink>
         </div>
     );
 }

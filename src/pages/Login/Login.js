@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Input from "../../components/Input/Input";
-function Login(props) {
+function Login({ updateLogin }) {
     const [error, setError] = useState(false);
     const navigate = useNavigate();
 
@@ -14,10 +14,12 @@ function Login(props) {
             password: e.target.password.value,
         };
         console.log(loginUser);
+
         axios
             .post("http://localhost:8080/users/login", loginUser)
             .then((response) => {
                 sessionStorage.setItem("token", response.data.token);
+                updateLogin(loginUser);
                 navigate("/profile");
             })
             .catch((e) => {

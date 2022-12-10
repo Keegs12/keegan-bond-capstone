@@ -1,15 +1,20 @@
 import "./CreateArticle.scss";
 import axios from "axios";
 import Input from "../../components/Input/Input";
-
+import Navbar from "../../components/Navbar/Navbar";
+import { useState } from "react";
 function CreateArticle({ userData }) {
+    const [author, setAuthor] = useState("");
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(userData.first_name);
+
+        // console.log(userData.first_name);
+        const authorValue = author || userData.first_name;
+
         const newArticle = {
             article_title: e.target.articleTitle.value,
             description: e.target.description.value,
-            author: e.target.author.value || userData.first_name,
+            author: authorValue,
             image: e.target.image.value,
         };
 
@@ -21,36 +26,50 @@ function CreateArticle({ userData }) {
             });
     };
     return (
-        <div>
-            <form onSubmit={onSubmit}>
-                <Input
-                    type="text"
-                    name="articleTitle"
-                    placeholder="Enter Article Title"
-                    label="Article Headline/Title"
-                />
-                <label htmlFor="description">Description</label>
-                <textarea
-                    id="description"
-                    name="description"
-                    placeholder="Enter description article"
-                ></textarea>
+        <>
+            <Navbar />
+            <section className="Create-Article">
+                <h1 className="Create-Article__title">Create an Article!</h1>
+                <div className="Create-Article__container">
+                    <form onSubmit={onSubmit}>
+                        <Input
+                            type="text"
+                            name="articleTitle"
+                            placeholder="Enter Article Title"
+                            label="Article Headline/Title"
+                        />
+                        <div className="Create-Article__description-container">
+                            <label
+                                className="form-input-label"
+                                htmlFor="description"
+                            >
+                                Description
+                            </label>
+                            <textarea
+                                className="Create-Article__description"
+                                id="description"
+                                name="description"
+                                placeholder="Enter description article"
+                            ></textarea>
+                        </div>
+                        {userData ? (
+                            ""
+                        ) : (
+                            <Input
+                                type="text"
+                                name="author"
+                                placeholder="Please Enter your Name"
+                                label="Author"
+                                value={author}
+                            />
+                        )}
 
-                {userData ? (
-                    ""
-                ) : (
-                    <Input
-                        type="text"
-                        name="author"
-                        placeholder="Please Enter your Name"
-                        label="Author"
-                    />
-                )}
-
-                <Input type="file" name="image" label="Image" />
-                <button type="submit">Create Article</button>
-            </form>
-        </div>
+                        <Input type="file" name="image" label="Image" />
+                        <button type="submit">Create Article</button>
+                    </form>
+                </div>
+            </section>
+        </>
     );
 }
 

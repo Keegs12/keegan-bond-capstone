@@ -7,7 +7,7 @@ function MainNewsArticle({ article }) {
     if (!article) {
         return;
     }
-    console.log(article);
+
     return (
         <div className="Main-Article">
             <img className="Main-Article__image" src={article.image}></img>

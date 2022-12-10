@@ -23,15 +23,15 @@ function LoL(props) {
     if (!articles) {
         return;
     }
-    console.log(mainArticle);
 
     const filteredArticles = articles.filter((article) => {
         return article.id !== mainArticle.id;
     });
-    console.log(filteredArticles);
+
     return (
         <>
             <Navbar />
+            <h1 className="LoL__title">Latest News</h1>
             <section className="LoL-Page">
                 <div className="Main-Article__container">
                     <MainNewsArticle article={mainArticle} />

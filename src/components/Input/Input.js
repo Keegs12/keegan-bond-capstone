@@ -2,9 +2,12 @@ import "./Input.scss";
 
 function Input({ name, label, type, placeholder }) {
     return (
-        <div>
-            <label htmlFor={name}>{label}</label>
+        <div className="form-input-container">
+            <label className="form-input-label" htmlFor={name}>
+                {label}
+            </label>
             <input
+                className="form-input"
                 type={type}
                 id={name}
                 name={name}

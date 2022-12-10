@@ -8,26 +8,29 @@ import JNG from "../../assets/roles/JUNGLE.png";
 import MID from "../../assets/roles/MIDDLE.png";
 import ADC from "../../assets/roles/ADC.png";
 import SUPP from "../../assets/roles/SUPPORT.png";
+import Navbar from "../../components/Navbar/Navbar";
 function LoLPlayers(props) {
     const [team, setTeam] = useState([]);
     const { teamId } = useParams();
 
     const selectedTeamId = teamId || null;
 
-    const anonymousPlayer = {
-        age: 0,
-        birthday: "0",
-        first_name: "Unknown",
-        id: Math.random() * 1000,
-        image_url:
-            "https://cdn.pandascore.co/images/player/image/329/100_ssumday_2021_split_2.png",
-        last_name: "Unknown",
-        modified_at: "2022-11-24T13:06:51Z",
-        name: "Unknown",
-        nationality: "Unknown",
-        role: "Unknown",
-        slug: "Unknown",
-    };
+    const anonymousPlayer = [
+        {
+            age: 0,
+            birthday: "0",
+            first_name: "Unknown",
+            id: Math.random() * 1000,
+            image_url:
+                "https://muhka-ensembles.imgix.net/assets/public/000/033/630/large/people-boy-man-guy-profile-silhouette-head-black.png?w=768&h=768&dpr=2.625&ch=DPR&auto=format%2Ccompress",
+            last_name: "Unknown",
+            modified_at: "2022-11-24T13:06:51Z",
+            name: "Unknown",
+            nationality: "Unknown",
+            role: "Unknown",
+            slug: "Unknown",
+        },
+    ];
     useEffect(() => {
         if (!selectedTeamId) {
             return;
@@ -41,7 +44,7 @@ function LoLPlayers(props) {
                 alert(e);
             });
     }, [selectedTeamId]);
-    console.log(team);
+
     const { players } = team;
 
     if (!players) {
@@ -62,33 +65,33 @@ function LoLPlayers(props) {
     let support = players.filter((player) => {
         return player.role === "sup";
     });
-    if (topLane === []) {
-        return (topLane = false);
-    }
-    if (jungle === []) {
-        return (jungle = false);
-    }
-    if (midLane === []) {
-        return (midLane = false);
-    }
-    if (adc === []) {
-        return (adc = false);
-    }
-    if (support === []) {
-        return (support = false);
-    }
-    console.log(topLane);
-    console.log(jungle);
-    console.log(midLane);
-    console.log(adc);
-    console.log(support);
+
     return (
         <>
-            <Player player={topLane ? topLane : anonymousPlayer} role={TOP} />
-            <Player player={jungle ? jungle : anonymousPlayer} role={JNG} />
-            <Player player={midLane ? midLane : anonymousPlayer} role={MID} />
-            <Player player={adc ? adc : anonymousPlayer} role={ADC} />
-            <Player player={support ? support : anonymousPlayer} role={SUPP} />
+            <Navbar />
+
+            <section className="Players">
+                <Player
+                    player={topLane.length === 0 ? anonymousPlayer : topLane}
+                    role={TOP}
+                />
+                <Player
+                    player={jungle.length === 0 ? anonymousPlayer : jungle}
+                    role={JNG}
+                />
+                <Player
+                    player={midLane.length === 0 ? anonymousPlayer : midLane}
+                    role={MID}
+                />
+                <Player
+                    player={adc.length === 0 ? anonymousPlayer : adc}
+                    role={ADC}
+                />
+                <Player
+                    player={support.length === 0 ? anonymousPlayer : support}
+                    role={SUPP}
+                />
+            </section>
         </>
     );
 }

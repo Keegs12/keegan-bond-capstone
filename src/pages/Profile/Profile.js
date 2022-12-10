@@ -3,15 +3,16 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Profile({ userData }) {
-    const [user, setUser] = useState(userData);
+function Profile({ userData, logout }) {
+    console.log(userData);
 
     const [failedAuth, setFailedAuth] = useState(false);
 
     const handleLogout = () => {
         sessionStorage.removeItem("token");
-        setUser(null);
+        // setUser(null);
         setFailedAuth(true);
+        logout(failedAuth);
     };
 
     if (failedAuth) {
@@ -25,7 +26,7 @@ function Profile({ userData }) {
         );
     }
 
-    if (user === null) {
+    if (!userData) {
         return (
             <main className="dashboard">
                 <p>Loading...</p>
@@ -36,9 +37,9 @@ function Profile({ userData }) {
     return (
         <div>
             <h1>Profile</h1>
-            <p> Email: {user.email}</p>
-            <p> Phone: {user.phone}</p>
-            <p> Address: {user.address}</p>
+            <p> Email: {userData.email}</p>
+            <p> Phone: {userData.phone}</p>
+            <p> Address: {userData.address}</p>
             <button onClick={handleLogout}>Log Out</button>
         </div>
     );
