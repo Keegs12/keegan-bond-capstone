@@ -1,6 +1,6 @@
 import "./Input.scss";
 
-function Input({ name, label, type, placeholder, onChange }) {
+function Input({ name, label, type, placeholder, onChange, accept }) {
     return (
         <div className="form-input-container">
             <label className="form-input-label" htmlFor={name}>
@@ -13,6 +13,7 @@ function Input({ name, label, type, placeholder, onChange }) {
                 name={name}
                 placeholder={placeholder}
                 onChange={onChange}
+                accept={accept}
             ></input>
         </div>
     );

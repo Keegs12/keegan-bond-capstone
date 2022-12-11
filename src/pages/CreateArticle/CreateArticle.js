@@ -68,7 +68,12 @@ function CreateArticle({ userData }) {
                             />
                         )}
 
-                        <Input type="file" name="image" label="Image" />
+                        <Input
+                            type="file"
+                            name="image"
+                            label="Image"
+                            accept="image/png, image/jpeg"
+                        />
                         <button
                             className="Create-Article__submit-button"
                             type="submit"
