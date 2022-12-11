@@ -1,3 +1,7 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizing" as *;
+@use "../../styles/partials/fonts" as *;
+
 .PostAdd {
     width: 21%;
     height: 500px;
@@ -18,5 +22,23 @@
     &__description {
         text-align: center;
         color: white;
+        font-weight: 600;
+    }
+    &__button {
+        background-color: $black;
+        border-color: transparent;
+        color: white;
+        font-family: "Barlow";
+        font-weight: 700;
+        font-size: 14px;
+        transform: skewX(-20deg);
+        width: 100%;
+        padding: 0 1rem;
+        height: 40px;
+        border: 1px solid white;
+
+        &:hover {
+            height: 55px;
+        }
     }
 }

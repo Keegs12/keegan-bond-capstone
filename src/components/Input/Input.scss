@@ -12,13 +12,32 @@
 .form-input {
     width: 100%;
     height: 40px;
-    border-bottom: 1px solid $light-grey;
+    border: none;
+    border-bottom: 2px solid $light-grey;
+    outline: none;
+    &:focus {
+        border-bottom: 2px solid $primary-red;
+    }
     &::placeholder {
         font-family: "Barlow";
-        color: $black;
+        color: $medium-grey;
+        font-weight: 600;
     }
 }
 .form-input-label {
     font-weight: 600;
     margin-bottom: 0.5rem;
+}
+
+input::file-selector-button {
+    background-color: $primary-red;
+    color: white;
+    border: transparent;
+    padding: 0.5rem;
+    border-radius: 3px;
+    margin-right: 1rem;
+}
+
+input[type="file"] {
+    color: $medium-grey;
 }

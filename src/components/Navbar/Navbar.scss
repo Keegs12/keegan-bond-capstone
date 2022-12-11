@@ -10,14 +10,14 @@
     align-items: center;
     margin-bottom: 1rem;
     height: 50px;
-    background-color: $black;
+    background-color: white;
 
     &__news {
         text-decoration: none;
         @include names-td;
         font-family: "Kanit";
         font-weight: 400;
-        color: white;
+        color: $black;
 
         &:hover {
             border-bottom: 3px solid $primary-red;
@@ -28,7 +28,7 @@
         text-decoration: none;
         font-family: "Kanit";
         font-weight: 400;
-        color: white;
+        color: $black;
         &:hover {
             border-bottom: 3px solid $primary-red;
         }
@@ -36,8 +36,4 @@
 }
 
 .active {
-    background: -webkit-linear-gradient(white, $primary-red);
-    background-clip: border-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }

@@ -8,7 +8,7 @@ function PostAdd(props) {
                 posting an article
             </p>
             <Link to="/LoL/create-article">
-                <button>Create Article</button>
+                <button className="PostAdd__button">Create Article</button>
             </Link>
         </div>
     );

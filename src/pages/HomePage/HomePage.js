@@ -1,17 +1,12 @@
 import React from "react";
 import GameCard from "../../components/GameCard/GameCard";
-import { Link } from "react-router-dom";
+
 function HomePage(props) {
     return (
-        <div>
-            <section className="card-holder">
-                <Link className="card" to="/LoL">
-                    <GameCard />
-                </Link>
-                <GameCard />
-                <GameCard />
-            </section>
-        </div>
+        <section className="card-holder">
+            <GameCard title="League of Legends" game="LoL" wallpaper={"LoL"} />
+            <GameCard title="Valorant" game="Val" wallpaper={"Val"} />
+        </section>
     );
 }
 

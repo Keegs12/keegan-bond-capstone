@@ -32,8 +32,9 @@ function Signup(props) {
             });
     };
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="Signup">
+            <h2 className="Signup__title">Sign up</h2>
+            <form className="Signup__form" onSubmit={handleSubmit}>
                 <Input
                     type="text"
                     name="first_name"
@@ -71,11 +72,15 @@ function Signup(props) {
                     placeholder="Enter your Password"
                 />
 
-                <button type="submit">Sign up</button>
+                <button className="Signup__button" type="submit">
+                    Sign up
+                </button>
             </form>
-            <p>
+            <p className="Signup__paragraph">
                 Already have an account?{" "}
-                <Link to="/users/login">Log in here</Link>
+                <Link className="Signup__link" to="/users/login">
+                    Log in here
+                </Link>
             </p>
         </div>
     );

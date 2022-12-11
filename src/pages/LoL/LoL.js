@@ -37,8 +37,9 @@ function LoL(props) {
                     <MainNewsArticle article={mainArticle} />
                     <PostAdd />
                 </div>
-
-                <NewsArticles articles={filteredArticles} />
+                {filteredArticles.map((article) => (
+                    <NewsArticles articles={article} />
+                ))}
             </section>
         </>
     );

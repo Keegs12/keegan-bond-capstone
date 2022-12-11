@@ -1,11 +1,25 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/sizing" as *;
+@use "../../styles/partials/responsive" as *;
 .Header {
     padding: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: $black;
+
+    &__logo {
+        width: 15%;
+        height: 120px;
+    }
 
     &__links {
         padding: 0 16px;
+        text-decoration: none;
+        color: white;
+        @include names-td;
+        font-family: "Kanit";
+        font-weight: 400;
     }
 
     &__profile {

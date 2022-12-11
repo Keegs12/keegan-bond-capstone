@@ -1,4 +1,9 @@
+@use "../../styles/partials/colors" as *;
 .Teams {
     display: flex;
     flex-wrap: wrap;
+}
+.Team-Card {
+    text-decoration: none;
+    color: $black;
 }

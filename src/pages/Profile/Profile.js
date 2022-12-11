@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Profile({ userData, logout }) {
-    console.log(userData);
-
     const [failedAuth, setFailedAuth] = useState(false);
 
     const handleLogout = () => {

@@ -19,7 +19,7 @@ function LoLTeams() {
     if (!teams) {
         return;
     }
-    console.log(teams);
+
     return (
         <>
             <Navbar />

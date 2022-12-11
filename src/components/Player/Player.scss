@@ -31,22 +31,27 @@
     }
     &__ign {
         @include names-td;
+        margin: 0;
     }
     &__name {
         display: flex;
         gap: 0.5rem;
+        margin: 0;
     }
     &__first-name {
         @include names-td;
+        margin: 0;
     }
     &__last-name {
         @include names-td;
+        margin: 0;
     }
     &__name-container {
         display: flex;
         gap: 1rem;
         justify-content: center;
         align-items: center;
+        margin: 1rem 0;
     }
 
     &__card-info-container {

@@ -129,3 +129,14 @@
         height: 100%;
     }
 }
+
+.--hover {
+    color: $primary-red;
+}
+.--img-hover {
+    background-color: $primary-red;
+}
+
+.--active {
+    border-left: 2px solid $primary-red;
+}

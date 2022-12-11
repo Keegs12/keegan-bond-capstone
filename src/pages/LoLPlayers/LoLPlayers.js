@@ -74,22 +74,27 @@ function LoLPlayers(props) {
                 <Player
                     player={topLane.length === 0 ? anonymousPlayer : topLane}
                     role={TOP}
+                    team={team.acronym}
                 />
                 <Player
                     player={jungle.length === 0 ? anonymousPlayer : jungle}
                     role={JNG}
+                    team={team.acronym}
                 />
                 <Player
                     player={midLane.length === 0 ? anonymousPlayer : midLane}
                     role={MID}
+                    team={team.acronym}
                 />
                 <Player
                     player={adc.length === 0 ? anonymousPlayer : adc}
                     role={ADC}
+                    team={team.acronym}
                 />
                 <Player
                     player={support.length === 0 ? anonymousPlayer : support}
                     role={SUPP}
+                    team={team.acronym}
                 />
             </section>
         </>

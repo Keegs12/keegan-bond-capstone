@@ -3,6 +3,12 @@
     position: relative;
     width: 76.5%;
     background-color: white;
+    &--active {
+        position: relative;
+        width: 76.5%;
+        background-color: white;
+        border-bottom: 2px solid $primary-red;
+    }
     &__tag {
         position: absolute;
         bottom: 225px;
@@ -19,6 +25,15 @@
         bottom: 155px;
         padding: 0 1rem;
         width: 85%;
+
+        &--hover {
+            position: absolute;
+            color: white;
+            bottom: 155px;
+            padding: 0 1rem;
+            width: 85%;
+            text-decoration: underline solid $primary-red;
+        }
     }
     &__user-info-container {
         display: flex;

@@ -5,10 +5,14 @@ import Navbar from "../../components/Navbar/Navbar";
 import { useState } from "react";
 function CreateArticle({ userData }) {
     const [author, setAuthor] = useState("");
+
+    const handleInput = (e) => {
+        setAuthor(e.target.value);
+    };
+
     const onSubmit = (e) => {
         e.preventDefault();
 
-        // console.log(userData.first_name);
         const authorValue = author || userData.first_name;
 
         const newArticle = {
@@ -18,7 +22,6 @@ function CreateArticle({ userData }) {
             image: e.target.image.value,
         };
 
-        console.log(newArticle);
         axios
             .post(`http://localhost:8080/lol/articles`, newArticle)
             .catch((e) => {
@@ -61,11 +64,17 @@ function CreateArticle({ userData }) {
                                 placeholder="Please Enter your Name"
                                 label="Author"
                                 value={author}
+                                onChange={handleInput}
                             />
                         )}
 
                         <Input type="file" name="image" label="Image" />
-                        <button type="submit">Create Article</button>
+                        <button
+                            className="Create-Article__submit-button"
+                            type="submit"
+                        >
+                            Create Article
+                        </button>
                     </form>
                 </div>
             </section>

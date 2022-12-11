@@ -1,17 +1,200 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/responsive" as *;
+@use "../../styles/partials/fonts" as *;
+@use "../../styles/partials/sizing" as *;
+a {
+    text-decoration: none;
+}
 .card-holder {
-    display: flex;
     justify-content: center;
+    display: flex;
+    position: relative;
+    margin-top: 3rem;
+    gap: 1rem;
 }
 
 .card {
-    border: 4px solid transparent;
+    &__info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__title {
+        color: white;
+        @include page-header-td;
+    }
+    &__paragraph {
+        color: white;
+        visibility: hidden;
+        @include names-td;
+    }
+}
+
+.--visible {
+    visibility: visible;
+}
+// .card-skewed-border {
+//     height: 500px;
+//     width: 30%;
+//     border: 10px solid white;
+//     transform: skewX(10deg);
+
+//     position: absolute;
+//     bottom: 15px;
+//     left: 645px;
+// }
+.card-LoL {
     transform: skewX(10deg);
     height: 500px;
     width: 30%;
-    background-color: red;
-    border: 2px solid blue;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: 1s;
+
+    @include desktop-wide {
+        width: 25%;
+    }
+
+    &:hover {
+        width: 40%;
+        height: 600px;
+        text-align: center;
+        padding-top: 10%;
+
+        @include desktop-wide {
+            width: 35%;
+            height: 600px;
+        }
+
+        &::before {
+            height: 610px;
+            position: absolute;
+            bottom: -2%;
+            left: -4%;
+            width: 105%;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        z-index: -2;
+        background: linear-gradient(#1d1ce5, #6fdfdf);
+        animation: animate 4s linear infinite;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/backgrounds/LoL.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        inset: 4px;
+
+        z-index: -1;
+    }
+
+    // &__wallpaper {
+    //     width: 100%;
+    //     height: 500px;
+    //     display: block;
+
+    //     &::before {
+    //         content: "";
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 500px;
+    //         z-index: -2;
+    //         background: linear-gradient(#1d1ce5, #6fdfdf);
+    //         animation: animate 4s linear infinite;
+    //     }
+    //     &::after {
+    //         content: "";
+    //         position: absolute;
+    //         // background: url("../../assets/backgrounds/LoL.webp");
+    //         // background-size: cover;
+    //         // background-position: center;
+    //         // background-repeat: no-repeat;
+    //         inset: 4px;
+
+    //         z-index: -1;
+    //     }
+    // }
 }
 
-.card:hover {
-    width: 50%;
+.card-Val {
+    transform: skewX(10deg);
+    height: 500px;
+    width: 30%;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: 1s;
+
+    @include desktop-wide {
+        width: 25%;
+    }
+
+    &:hover {
+        width: 40%;
+        height: 600px;
+        text-align: center;
+        padding-top: 10%;
+
+        @include desktop-wide {
+            width: 35%;
+            height: 600px;
+        }
+
+        &::before {
+            width: 105%;
+            height: 610px;
+            position: absolute;
+            bottom: -2%;
+            left: -4%;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 500px;
+        z-index: -2;
+        background: linear-gradient(#dc3d4b, #cf0a0a);
+        animation: animate 4s linear infinite;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        background: url("../../assets/backgrounds/Valorant.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        inset: 4px;
+
+        z-index: -1;
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

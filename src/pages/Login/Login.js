@@ -13,7 +13,6 @@ function Login({ updateLogin }) {
             email: e.target.email.value,
             password: e.target.password.value,
         };
-        console.log(loginUser);
 
         axios
             .post("http://localhost:8080/users/login", loginUser)
@@ -28,8 +27,9 @@ function Login({ updateLogin }) {
             });
     };
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="Login">
+            <h2 className="Login__title">Login</h2>
+            <form className="Login__form" onSubmit={handleSubmit}>
                 <Input
                     type="text"
                     name="email"
@@ -43,11 +43,13 @@ function Login({ updateLogin }) {
                     label="Password"
                 />
 
-                <button>Login</button>
+                <button className="Login__button">Login</button>
             </form>
             <p>
                 Need an account?
-                <Link to="/users/signup">Signup here</Link>
+                <Link className="Login__link" to="/users/signup">
+                    Signup here
+                </Link>
             </p>
         </div>
     );

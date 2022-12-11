@@ -3,8 +3,7 @@ import arrowRight from "../../assets/icons/arrow-right-svgrepo-com.svg";
 import arrowLeft from "../../assets/icons/arrow-left-svgrepo-com.svg";
 import { useState } from "react";
 import LoL from "../../assets/logo/LoL.png";
-function Player({ player, role }) {
-    console.log(player);
+function Player({ player, role, team }) {
     let [slideIndex, setSlideIndex] = useState(0);
 
     const next = () => {
@@ -54,9 +53,7 @@ function Player({ player, role }) {
                         src={arrowLeft}
                         alt="left arrow"
                     ></img>
-                    <h2 className="Players__ign">
-                        {player[slideIndex].name} :{" "}
-                    </h2>
+                    <h2 className="Players__ign">{player[slideIndex].name}:</h2>
                     <div className="Players__name">
                         <h2 className="Players__first-name">
                             {player[slideIndex].first_name}
@@ -79,9 +76,7 @@ function Player({ player, role }) {
                 <div className="Players__card-info-container">
                     <div className="Players__card-info">
                         <h3 className="Players__label">Team :</h3>
-                        <h3 className="Players__info">
-                            {player[slideIndex].nationality}
-                        </h3>
+                        <h3 className="Players__info">{team}</h3>
                     </div>
                     <div className="Players__card-info">
                         <h3 className="Players__label">Nationality :</h3>

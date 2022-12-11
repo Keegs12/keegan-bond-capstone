@@ -1,14 +1,28 @@
 @use "../../styles/partials/colors" as *;
 .Create-Article {
-    border: 1px solid red;
     width: 30%;
     margin: auto;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     background-color: white;
-    border-radius: 2px;
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, $primary-red, $black) 1;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);
     &__title {
         text-align: center;
+        margin: 2rem 0 3rem 0;
+        font-weight: 700;
+        font-size: 32px;
+
+        background: -webkit-linear-gradient(left, $primary-red, $black);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__container {
+        border-top: 2px solid transparent;
+        border-image: linear-gradient(0.25turn, $primary-red, $black);
+        border-image-slice: 1;
     }
 
     &__description-container {
@@ -17,13 +31,28 @@
     }
     &__description {
         height: 150px;
+        width: 100%;
         border-radius: 4px;
-
+        border: none;
+        border-bottom: 2px solid $light-grey;
+        resize: none;
         &::placeholder {
-            padding: 0.5rem;
+            font-weight: 600;
+            color: $medium-grey;
         }
         &:focus {
-            border: 1px solid $primary-red;
+            border-bottom: 2px solid $primary-red;
+            outline: none;
         }
+    }
+    &__submit-button {
+        color: white;
+        border: transparent;
+        background-color: $primary-red;
+        padding: 0.5rem;
+        height: 40px;
+        width: 120px;
+        border-radius: 3px;
+        margin: 1rem 0;
     }
 }

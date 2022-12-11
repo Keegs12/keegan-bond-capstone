@@ -1,19 +1,25 @@
 import React from "react";
-import EsportsHubLogo from "../../assets/logo/EsportsLogo.jpg";
+import EsportsHubLogo from "../../assets/logo/logo_transparent.png";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 function Header({ userData }) {
     return (
         <div className="Header">
-            <img src={EsportsHubLogo} alt="website logo"></img>
+            <img
+                className="Header__logo"
+                src={EsportsHubLogo}
+                alt="website logo"
+            ></img>
             <div className="Header__nav">
                 <Link className="Header__links" to="/">
                     Home
                 </Link>
-                <Link to="/">About</Link>
+                <Link className="Header__links" to="/">
+                    About
+                </Link>
                 <Link
                     className={
-                        userData ? "Header__signup --hidden" : "Header__signup"
+                        userData ? "Header__links --hidden" : "Header__links"
                     }
                     to="/users/signup"
                 >
@@ -21,7 +27,7 @@ function Header({ userData }) {
                 </Link>
                 <Link
                     className={
-                        userData ? "Header__login --hidden" : "Header__login"
+                        userData ? "Header__links --hidden" : "Header__links"
                     }
                     to="/users/login"
                 >
