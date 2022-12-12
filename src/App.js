@@ -12,6 +12,7 @@ import CreateArticle from "./pages/CreateArticle/CreateArticle";
 import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import SpecificArticle from "./pages/SpecificArticle/SpecificArticle";
 function App() {
     const [user, setUser] = useState(null);
     const [failedAuth, setFailedAuth] = useState(false);
@@ -23,10 +24,12 @@ function App() {
         }
     };
     const logout = (failedAuth) => {
+        console.log(failedAuth);
         if (!failedAuth) {
             return setLogin(false);
         }
     };
+    console.log(login);
 
     useEffect(() => {
         const token = sessionStorage.getItem("token");
@@ -57,6 +60,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
                 <Route path="/LoL" element={<LoL />}></Route>
+                <Route
+                    path="/LoL/:articleId"
+                    element={<SpecificArticle />}
+                ></Route>
                 <Route path="/LoL/teams" element={<LoLTeams />}></Route>
                 <Route
                     path="/LoL/teams/:teamId"

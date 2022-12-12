@@ -4,6 +4,7 @@ import facebook from "../../assets/icons/facebook-svgrepo-com.svg";
 import email from "../../assets/icons/mail-svgrepo-com.svg";
 import reddit from "../../assets/icons/reddit-svgrepo-com.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function MainNewsArticle({ article }) {
     const [hover, setHover] = useState(false);
     const handleMouseOver = () => {
@@ -18,11 +19,17 @@ function MainNewsArticle({ article }) {
     }
 
     return (
-        <div
+        <Link
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             className={hover ? "Main-Article--active" : "Main-Article"}
+            to={`/LoL/${article.id}`}
         >
+            {/* <div
+                onMouseOver={handleMouseOver}
+                onMouseOut={handleMouseOut}
+                className={hover ? "Main-Article--active" : "Main-Article"}
+            > */}
             <img className="Main-Article__image" src={article.image}></img>
             <p className="Main-Article__tag">#NEWS</p>
             <h2
@@ -102,7 +109,8 @@ function MainNewsArticle({ article }) {
                     </div>
                 </div>
             </div>
-        </div>
+            {/* </div> */}
+        </Link>
     );
 }
 

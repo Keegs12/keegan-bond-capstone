@@ -35,9 +35,7 @@ function Header({ userData }) {
                 </Link>
                 <Link
                     className={
-                        userData
-                            ? "Header__profile"
-                            : "Header__profile --hidden"
+                        userData ? "Header__links" : "Header__profile --hidden"
                     }
                     to="/profile"
                 >

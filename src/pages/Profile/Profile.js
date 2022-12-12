@@ -8,10 +8,13 @@ function Profile({ userData, logout }) {
 
     const handleLogout = () => {
         sessionStorage.removeItem("token");
+        logout(false);
         // setUser(null);
         setFailedAuth(true);
-        logout(failedAuth);
     };
+
+    // logout(failedAuth);
+    // console.log(failedAuth);
 
     if (failedAuth) {
         return (
@@ -33,12 +36,14 @@ function Profile({ userData, logout }) {
     }
 
     return (
-        <div>
-            <h1>Profile</h1>
-            <p> Email: {userData.email}</p>
-            <p> Phone: {userData.phone}</p>
-            <p> Address: {userData.address}</p>
-            <button onClick={handleLogout}>Log Out</button>
+        <div className="Profile">
+            <h1 className="Profile__title">Profile</h1>
+            <p className="Profile__email"> Email: {userData.email}</p>
+            <p className="Profile__phone"> Phone: {userData.phone}</p>
+            <p className="Profile__address"> Address: {userData.address}</p>
+            <button className="Profile__button" onClick={handleLogout}>
+                Log Out
+            </button>
         </div>
     );
 }

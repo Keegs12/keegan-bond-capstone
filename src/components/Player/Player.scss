@@ -1,11 +1,13 @@
 @use "../../styles/partials/sizing" as *;
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/responsive" as *;
 .Players {
     padding: 1rem;
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     position: relative;
+    flex-wrap: wrap;
 
     &__logo-role-container {
         display: flex;
@@ -22,12 +24,16 @@
         width: 100%;
     }
     &__next-image {
-        width: 27px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        right: -7%;
     }
     &__previous-image {
-        width: 27px;
-        height: 50px;
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: -7%;
     }
     &__ign {
         @include names-td;
@@ -52,6 +58,7 @@
         justify-content: center;
         align-items: center;
         margin: 1rem 0;
+        position: relative;
     }
 
     &__card-info-container {
@@ -92,6 +99,11 @@
     border-width: 2px;
     border-style: solid;
     border-image: linear-gradient(to right, $gold, $medium-grey) 1;
+
+    @include desktop-wide {
+        width: 22%;
+        flex-wrap: wrap;
+    }
 
     &:hover {
         transform: scale(0.93, 0.93);

@@ -30,7 +30,7 @@ function LoLTeams() {
                             className="Team-Card"
                             to={`/LoL/teams/${team.id}`}
                         >
-                            <TeamCard teams={team} />
+                            <TeamCard teams={team} key={team.id} />
                         </Link>
                     );
                 })}

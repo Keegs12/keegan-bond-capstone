@@ -1,6 +1,7 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/responsive" as *;
 .Login {
-    width: 30%;
+    width: 35%;
     margin: 1rem auto;
     padding: 1rem 1rem;
     background-color: white;
@@ -9,6 +10,9 @@
     border-style: solid;
     border-image: linear-gradient(to right, $primary-red, $black) 1;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);
+    @include desktop-wide {
+        width: 50%;
+    }
     &__title {
         text-align: center;
         margin: 2rem 0 3rem 0;
@@ -41,5 +45,6 @@
         border-bottom: 2px solid transparent;
         border-image: linear-gradient(0.25turn, $primary-red, $black);
         border-image-slice: 1;
+        margin-left: 0.5rem;
     }
 }

@@ -66,7 +66,7 @@ function Signup(props) {
                     placeholder="Enter your Email"
                 />
                 <Input
-                    type="text"
+                    type="password"
                     name="password"
                     label="Password"
                     placeholder="Enter your Password"

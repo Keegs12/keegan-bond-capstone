@@ -1,8 +1,12 @@
 @use "../../styles/partials/colors" as *;
+a {
+    color: $black;
+}
 .Main-Article {
     position: relative;
     width: 76.5%;
     background-color: white;
+
     &--active {
         position: relative;
         width: 76.5%;

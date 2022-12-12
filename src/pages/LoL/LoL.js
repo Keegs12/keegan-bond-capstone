@@ -6,6 +6,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import PostAdd from "../../components/PostAdd/PostAdd";
 import "./LoL.scss";
+import { Link } from "react-router-dom";
 function LoL(props) {
     const [articles, setArticles] = useState([]);
 
@@ -27,6 +28,9 @@ function LoL(props) {
     const filteredArticles = articles.filter((article) => {
         return article.id !== mainArticle.id;
     });
+    if (!mainArticle) {
+        return;
+    }
 
     return (
         <>
@@ -35,10 +39,11 @@ function LoL(props) {
             <section className="LoL-Page">
                 <div className="Main-Article__container">
                     <MainNewsArticle article={mainArticle} />
+
                     <PostAdd />
                 </div>
                 {filteredArticles.map((article) => (
-                    <NewsArticles articles={article} />
+                    <NewsArticles articles={article} key={article.id} />
                 ))}
             </section>
         </>

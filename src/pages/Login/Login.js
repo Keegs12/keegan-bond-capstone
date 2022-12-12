@@ -37,7 +37,7 @@ function Login({ updateLogin }) {
                     label="Email"
                 />
                 <Input
-                    type="text"
+                    type="password"
                     name="password"
                     placeholder="Please Enter your Password"
                     label="Password"
