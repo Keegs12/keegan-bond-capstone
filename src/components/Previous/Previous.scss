@@ -1,0 +1,21 @@
+@use "../../styles/partials/sizing" as *;
+@use "../../styles/partials/colors" as *;
+.Previous {
+    &__container {
+        display: flex;
+
+        margin: 2rem 0;
+        gap: 1rem;
+    }
+    &__title {
+        @include page-header-td;
+        margin: 0;
+        background: -webkit-linear-gradient(left, $primary-red, $black);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__image {
+        width: 50px;
+        height: 50px;
+    }
+}

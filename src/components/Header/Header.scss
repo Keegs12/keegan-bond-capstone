@@ -20,6 +20,10 @@
         @include names-td;
         font-family: "Kanit";
         font-weight: 400;
+
+        &:hover {
+            color: $primary-red;
+        }
     }
 
     &__profile {

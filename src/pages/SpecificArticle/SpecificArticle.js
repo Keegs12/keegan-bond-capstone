@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
+import Previous from "../../components/Previous/Previous";
 function SpecificArticle(props) {
     const [article, setArticle] = useState([]);
     const { articleId } = useParams();
@@ -24,6 +25,7 @@ function SpecificArticle(props) {
     return (
         <>
             <Navbar />
+            <Previous previous="/LoL" />
             <div className="Specific-Article">
                 <h2 className="Specific-Article__title">
                     {article.article_title}

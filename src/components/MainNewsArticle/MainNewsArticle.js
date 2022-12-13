@@ -30,7 +30,11 @@ function MainNewsArticle({ article }) {
                 onMouseOut={handleMouseOut}
                 className={hover ? "Main-Article--active" : "Main-Article"}
             > */}
-            <img className="Main-Article__image" src={article.image}></img>
+            <img
+                className="Main-Article__image"
+                src={article.image}
+                alt="article"
+            ></img>
             <p className="Main-Article__tag">#NEWS</p>
             <h2
                 className={

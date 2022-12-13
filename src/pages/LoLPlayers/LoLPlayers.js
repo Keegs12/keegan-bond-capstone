@@ -9,6 +9,7 @@ import MID from "../../assets/roles/MIDDLE.png";
 import ADC from "../../assets/roles/ADC.png";
 import SUPP from "../../assets/roles/SUPPORT.png";
 import Navbar from "../../components/Navbar/Navbar";
+import Previous from "../../components/Previous/Previous";
 function LoLPlayers(props) {
     const [team, setTeam] = useState([]);
     const { teamId } = useParams();
@@ -69,7 +70,7 @@ function LoLPlayers(props) {
     return (
         <>
             <Navbar />
-
+            <Previous previous="/LoL/teams" />
             <section className="Players">
                 <Player
                     player={topLane.length === 0 ? anonymousPlayer : topLane}

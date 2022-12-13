@@ -1,16 +1,16 @@
 import "./Profile.scss";
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function Profile({ userData, logout }) {
     const [failedAuth, setFailedAuth] = useState(false);
-
+    let navigate = useNavigate();
     const handleLogout = () => {
         sessionStorage.removeItem("token");
-        logout(false);
-        // setUser(null);
         setFailedAuth(true);
+        logout(failedAuth);
+        navigate("/");
     };
 
     // logout(failedAuth);

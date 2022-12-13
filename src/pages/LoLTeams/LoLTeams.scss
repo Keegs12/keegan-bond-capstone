@@ -1,9 +1,11 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/responsive" as *;
 .Teams {
     display: flex;
     flex-wrap: wrap;
-}
-.Team-Card {
-    text-decoration: none;
-    color: $black;
+
+    @include desktop-wide {
+        justify-content: center;
+        gap: 3rem;
+    }
 }

@@ -2,7 +2,6 @@ import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import LoL from "./pages/LoL/LoL";
 import Header from "./components/Header/Header";
 import HomePage from "./pages/HomePage/HomePage";
@@ -13,6 +12,7 @@ import Signup from "./pages/Signup/Signup";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
 import SpecificArticle from "./pages/SpecificArticle/SpecificArticle";
+import About from "./pages/About/About";
 function App() {
     const [user, setUser] = useState(null);
     const [failedAuth, setFailedAuth] = useState(false);
@@ -23,13 +23,14 @@ function App() {
             return setLogin(true);
         }
     };
-    const logout = (failedAuth) => {
-        console.log(failedAuth);
-        if (!failedAuth) {
+    const logout = (logout) => {
+        console.log(logout);
+        if (!logout) {
             return setLogin(false);
         }
     };
     console.log(login);
+    console.log(user);
 
     useEffect(() => {
         const token = sessionStorage.getItem("token");
@@ -59,6 +60,7 @@ function App() {
             <Header userData={user} />
             <Routes>
                 <Route path="/" element={<HomePage />}></Route>
+                <Route path="/About" element={<About />}></Route>
                 <Route path="/LoL" element={<LoL />}></Route>
                 <Route
                     path="/LoL/:articleId"

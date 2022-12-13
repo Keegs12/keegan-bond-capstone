@@ -9,6 +9,12 @@
     position: relative;
     flex-wrap: wrap;
 
+    @include desktop {
+        gap: 1.5rem;
+        padding: 5%;
+        flex-direction: column;
+    }
+
     &__logo-role-container {
         display: flex;
         justify-content: space-between;
@@ -102,6 +108,12 @@
 
     @include desktop-wide {
         width: 22%;
+        flex-wrap: wrap;
+    }
+
+    @include desktop {
+        width: 36%;
+        margin: 1rem 0;
         flex-wrap: wrap;
     }
 

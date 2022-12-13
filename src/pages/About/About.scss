@@ -1,0 +1,27 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/responsive" as *;
+@use "../../styles/partials/sizing" as *;
+
+.About {
+    border-radius: 4px;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, $primary-red, $black) 1;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);
+    width: 60%;
+    margin: 2rem auto;
+    &__info-container {
+        padding: 2rem 1rem;
+    }
+    &__title {
+        text-align: center;
+        @include page-header-td;
+        background: -webkit-linear-gradient(left, $primary-red, $black);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__description {
+        text-align: center;
+        @include names-td;
+    }
+}

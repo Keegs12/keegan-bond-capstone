@@ -15,6 +15,15 @@ function Input({ name, label, type, placeholder, onChange, accept }) {
                 onChange={onChange}
                 accept={accept}
             ></input>
+            {/* <div className="error-container">
+                <p
+                    className={
+                        error ? "error-message --visible" : "error-message"
+                    }
+                >
+                    This Field is required
+                </p>
+            </div> */}
         </div>
     );
 }

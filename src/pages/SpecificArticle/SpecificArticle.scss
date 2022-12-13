@@ -4,7 +4,11 @@
 @use "../../styles/partials/sizing" as *;
 
 .Specific-Article {
-    padding: 0 25%;
+    padding: 0 15%;
+
+    @include desktop {
+        padding: 0 5%;
+    }
     &__title {
         font-size: 24px;
         color: $dark-grey;

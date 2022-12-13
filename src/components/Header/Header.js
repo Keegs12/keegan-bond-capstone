@@ -14,7 +14,7 @@ function Header({ userData }) {
                 <Link className="Header__links" to="/">
                     Home
                 </Link>
-                <Link className="Header__links" to="/">
+                <Link className="Header__links" to="/About">
                     About
                 </Link>
                 <Link

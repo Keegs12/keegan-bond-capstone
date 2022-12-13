@@ -2,6 +2,7 @@ import "./CreateArticle.scss";
 import axios from "axios";
 import Input from "../../components/Input/Input";
 import Navbar from "../../components/Navbar/Navbar";
+
 import { useState } from "react";
 function CreateArticle({ userData }) {
     const [author, setAuthor] = useState("");
@@ -14,23 +15,46 @@ function CreateArticle({ userData }) {
         e.preventDefault();
 
         const authorValue = author || userData.first_name;
+        console.log(e.target.image.files[0]);
+        console.log(author);
+        const formData = new FormData(e.target);
+        // formData.append("article_title", e.target.articleTitle.value);
+        // formData.append("description", e.target.description.value);
+        formData.set("author", authorValue);
+        // article_title: e.target.articleTitle.value,
+        // description: e.target.description.value,
+        // author: authorValue,
+        // formData.append("file", e.target.image.files[0]);
 
-        const newArticle = {
-            article_title: e.target.articleTitle.value,
-            description: e.target.description.value,
-            author: authorValue,
-            image: e.target.image.value,
-        };
-
+        // console.log(formData.get("file"));
         axios
-            .post(`http://localhost:8080/lol/articles`, newArticle)
-            .catch((e) => {
-                console.log(e);
-            });
+            .post(`http://localhost:8080/lol/articles`, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            })
+            .then((res) => {
+                alert("File Upload success");
+            })
+            .catch((err) => alert(err));
+
+        // const newArticle = {
+        //     article_title: e.target.articleTitle.value,
+        //     description: e.target.description.value,
+        //     author: authorValue,
+        //     image: e.target.image.files[0],
+        // };
+
+        // axios
+        //     .post(`http://localhost:8080/lol/articles`, newArticle)
+        //     .catch((e) => {
+        //         console.log(e);
+        //     });
     };
     return (
         <>
             <Navbar />
+
             <section className="Create-Article">
                 <h1 className="Create-Article__title">Create an Article!</h1>
                 <div className="Create-Article__container">

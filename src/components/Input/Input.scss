@@ -41,3 +41,11 @@ input::file-selector-button {
 input[type="file"] {
     color: $medium-grey;
 }
+.error-message {
+    color: $primary-red;
+    display: none;
+}
+
+.--visible {
+    display: block;
+}

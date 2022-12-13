@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import Previous from "../../components/Previous/Previous";
 import "./LoLTeams.scss";
 function LoLTeams() {
     const [teams, setTeams] = useState([]);
@@ -23,6 +24,7 @@ function LoLTeams() {
     return (
         <>
             <Navbar />
+            <Previous previous="/LoL" />
             <section className="Teams">
                 {teams.map((team) => {
                     return (
@@ -34,7 +36,6 @@ function LoLTeams() {
                         </Link>
                     );
                 })}
-                ;
             </section>
         </>
     );
