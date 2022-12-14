@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 import Previous from "../../components/Previous/Previous";
 import "./LoLTeams.scss";
 function LoLTeams() {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [teams, setTeams] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8080/lol/teams")
+            .get(`${API_URL}/lol/teams`)
             .then((response) => {
                 setTeams(response.data);
             })
@@ -31,6 +32,7 @@ function LoLTeams() {
                         <Link
                             className="Team-Card"
                             to={`/LoL/teams/${team.id}`}
+                            key={team.id}
                         >
                             <TeamCard teams={team} key={team.id} />
                         </Link>

@@ -5,6 +5,7 @@ import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import Previous from "../../components/Previous/Previous";
 function SpecificArticle(props) {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [article, setArticle] = useState([]);
     const { articleId } = useParams();
     const selectedArticleId = articleId || null;
@@ -13,7 +14,7 @@ function SpecificArticle(props) {
             return;
         }
         axios
-            .get(`http://localhost:8080/lol/articles/${selectedArticleId}`)
+            .get(`${API_URL}/lol/articles/${selectedArticleId}`)
             .then((response) => {
                 setArticle(response.data);
             })

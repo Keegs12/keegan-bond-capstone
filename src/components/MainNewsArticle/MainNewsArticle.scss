@@ -7,6 +7,20 @@ a {
     position: relative;
     width: 76.5%;
     background-color: white;
+    z-index: 10;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 350px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        background-color: black;
+        opacity: 0.5;
+    }
 
     @include tablet {
         width: 100%;
@@ -16,34 +30,83 @@ a {
         position: relative;
         width: 76.5%;
         background-color: white;
-        border-bottom: 2px solid $primary-red;
+        border-bottom: 0.125rem solid $primary-red;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 350px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background-color: black;
+            opacity: 0.5;
+        }
+
+        @include tablet {
+            width: 100%;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                z-index: 1;
+                background-color: black;
+                opacity: 0.5;
+            }
+        }
     }
     &__tag {
         position: absolute;
-        bottom: 225px;
+        bottom: 14.0625rem;
         color: white;
         padding: 0 1rem;
+        z-index: 10;
+
+        @include tablet {
+            bottom: 17.0625rem;
+        }
     }
     &__image {
         object-fit: fill;
-
         width: 100%;
         height: 350px;
+        position: relative;
     }
     &__title {
         position: absolute;
         color: white;
-        bottom: 155px;
+        bottom: 9.6875rem;
         padding: 0 1rem;
         width: 85%;
+        z-index: 10;
+
+        @include tablet {
+            width: 100%;
+            bottom: 12.6875rem;
+            font-size: 1.25rem;
+        }
 
         &--hover {
             position: absolute;
             color: white;
-            bottom: 155px;
+            bottom: 9.6875rem;
             padding: 0 1rem;
             width: 85%;
             text-decoration: underline solid $primary-red;
+            z-index: 10;
+
+            @include tablet {
+                width: 100%;
+                bottom: 12.6875rem;
+                font-size: 1.25rem;
+            }
         }
     }
     &__user-info-container {
@@ -58,6 +121,7 @@ a {
             padding-bottom: 1rem;
         }
     }
+
     &__description {
         --max-lines: 3;
         color: $medium-grey;

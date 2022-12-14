@@ -14,6 +14,7 @@ import Profile from "./pages/Profile/Profile";
 import SpecificArticle from "./pages/SpecificArticle/SpecificArticle";
 import About from "./pages/About/About";
 function App() {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [user, setUser] = useState(null);
     const [failedAuth, setFailedAuth] = useState(false);
     const [login, setLogin] = useState(false);
@@ -24,10 +25,9 @@ function App() {
         }
     };
     const logout = (logout) => {
-        console.log(logout);
-        if (!logout) {
-            return setLogin(false);
-        }
+        setUser(null);
+        setLogin(false);
+        return;
     };
     console.log(login);
     console.log(user);
@@ -41,7 +41,7 @@ function App() {
 
         // Get the data from the API
         axios
-            .get("http://localhost:8080/users/current", {
+            .get(`${API_URL}/users/current`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

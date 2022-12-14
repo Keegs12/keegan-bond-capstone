@@ -1,15 +1,19 @@
 import React from "react";
-import EsportsHubLogo from "../../assets/logo/logo_transparent.png";
+import EsportsHubLogo from "../../assets/logo/logo-no-background.png";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 function Header({ userData }) {
     return (
         <div className="Header">
-            <img
-                className="Header__logo"
-                src={EsportsHubLogo}
-                alt="website logo"
-            ></img>
+            <div className="Header__image-container">
+                <Link to="/">
+                    <img
+                        className="Header__logo"
+                        src={EsportsHubLogo}
+                        alt="website logo"
+                    ></img>
+                </Link>
+            </div>
             <div className="Header__nav">
                 <Link className="Header__links" to="/">
                     Home

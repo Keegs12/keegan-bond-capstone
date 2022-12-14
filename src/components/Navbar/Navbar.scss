@@ -5,12 +5,20 @@
 .Navbar {
     display: flex;
     gap: 6rem;
-    padding: 0 2rem;
-    border-bottom: 1px solid $black;
+    padding: 0 6%;
+    border-bottom: 0.0625rem solid $medium-grey;
     align-items: center;
     margin-bottom: 1rem;
-    height: 50px;
+    height: 3.125rem;
     background-color: white;
+
+    @include desktop {
+        padding: 0 2rem;
+    }
+
+    @include tablet {
+        justify-content: center;
+    }
 
     &__news {
         text-decoration: none;
@@ -18,9 +26,16 @@
         font-family: "Kanit";
         font-weight: 400;
         color: $black;
+        height: 100%;
+        display: flex;
+        align-items: center;
 
+        @include tablet {
+            font-size: 1rem;
+        }
         &:hover {
-            border-bottom: 3px solid $primary-red;
+            border-bottom: 0.1875rem solid $primary-red;
+            color: $primary-red;
         }
     }
     &__teams {
@@ -29,8 +44,17 @@
         font-family: "Kanit";
         font-weight: 400;
         color: $black;
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        @include tablet {
+            font-size: 1rem;
+        }
+
         &:hover {
-            border-bottom: 3px solid $primary-red;
+            border-bottom: 0.1875rem solid $primary-red;
+            color: $primary-red;
         }
     }
 }

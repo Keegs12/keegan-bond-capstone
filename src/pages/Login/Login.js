@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Input from "../../components/Input/Input";
 function Login({ updateLogin }) {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [error, setError] = useState(false);
     const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ function Login({ updateLogin }) {
         };
 
         axios
-            .post("http://localhost:8080/users/login", loginUser)
+            .post(`${API_URL}/users/login`, loginUser)
             .then((response) => {
                 sessionStorage.setItem("token", response.data.token);
                 updateLogin(loginUser);
@@ -35,12 +36,14 @@ function Login({ updateLogin }) {
                     name="email"
                     placeholder="Please Enter your Email"
                     label="Email"
+                    required="true"
                 />
                 <Input
                     type="password"
                     name="password"
                     placeholder="Please Enter your Password"
                     label="Password"
+                    required="true"
                 />
 
                 <button className="Login__button">Login</button>

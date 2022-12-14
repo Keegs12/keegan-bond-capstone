@@ -2,19 +2,23 @@ import "./CreateArticle.scss";
 import axios from "axios";
 import Input from "../../components/Input/Input";
 import Navbar from "../../components/Navbar/Navbar";
-
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 function CreateArticle({ userData }) {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [author, setAuthor] = useState("");
-
+    const [articleTitle, setArticleTitle] = useState("");
+    let navigate = useNavigate();
     const handleInput = (e) => {
         setAuthor(e.target.value);
+        setArticleTitle(e.target.value);
     };
 
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const authorValue = author || userData.first_name;
+        const authorValue =
+            author || userData.first_name + " " + userData.last_name;
         console.log(e.target.image.files[0]);
         console.log(author);
         const formData = new FormData(e.target);
@@ -27,14 +31,16 @@ function CreateArticle({ userData }) {
         // formData.append("file", e.target.image.files[0]);
 
         // console.log(formData.get("file"));
+
         axios
-            .post(`http://localhost:8080/lol/articles`, formData, {
+            .post(`${API_URL}/lol/articles`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             })
             .then((res) => {
                 alert("File Upload success");
+                navigate("/LoL");
             })
             .catch((err) => alert(err));
 
@@ -64,6 +70,7 @@ function CreateArticle({ userData }) {
                             name="articleTitle"
                             placeholder="Enter Article Title"
                             label="Article Headline/Title"
+                            required={true}
                         />
                         <div className="Create-Article__description-container">
                             <label
@@ -77,6 +84,7 @@ function CreateArticle({ userData }) {
                                 id="description"
                                 name="description"
                                 placeholder="Enter description article"
+                                required
                             ></textarea>
                         </div>
                         {userData ? (
@@ -89,6 +97,7 @@ function CreateArticle({ userData }) {
                                 label="Author"
                                 value={author}
                                 onChange={handleInput}
+                                required={true}
                             />
                         )}
 
@@ -97,6 +106,7 @@ function CreateArticle({ userData }) {
                             name="image"
                             label="Image"
                             accept="image/png, image/jpeg"
+                            required={true}
                         />
                         <button
                             className="Create-Article__submit-button"

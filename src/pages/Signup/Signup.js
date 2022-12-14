@@ -1,10 +1,12 @@
 import "./Signup.scss";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Input from "../../components/Input/Input";
 
 function Signup(props) {
+    const API_URL = process.env.REACT_APP_API_URL;
+    let navigate = useNavigate();
     const [error, setError] = useState("");
     const [success, setSuccess] = useState(false);
 
@@ -20,10 +22,12 @@ function Signup(props) {
             password: e.target.password.value,
         };
         axios
-            .post("http://localhost:8080/users/register", newUser)
+            .post(`${API_URL}/users/register`, newUser)
             .then((response) => {
                 setSuccess(true);
                 setError("");
+                alert("Successfully Registered");
+                navigate("/users/login");
                 e.target.reset();
             })
             .catch((e) => {
@@ -40,12 +44,14 @@ function Signup(props) {
                     name="first_name"
                     label="First Name"
                     placeholder="Enter your First Name"
+                    required="true"
                 />
                 <Input
                     type="text"
                     name="last_name"
                     label="Last Name"
                     placeholder="Enter your Last Name"
+                    required="true"
                 />
                 <Input
                     type="text"
@@ -58,18 +64,21 @@ function Signup(props) {
                     name="address"
                     label="Address"
                     placeholder="Enter your Address"
+                    required="true"
                 />
                 <Input
                     type="text"
                     name="email"
                     label="Email"
                     placeholder="Enter your Email"
+                    required="true"
                 />
                 <Input
                     type="password"
                     name="password"
                     label="Password"
                     placeholder="Enter your Password"
+                    required="true"
                 />
 
                 <button className="Signup__button" type="submit">

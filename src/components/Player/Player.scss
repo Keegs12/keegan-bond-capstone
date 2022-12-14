@@ -11,8 +11,14 @@
 
     @include desktop {
         gap: 1.5rem;
-        padding: 5%;
-        flex-direction: column;
+        padding: 0;
+        flex-direction: row;
+    }
+    @include tablet {
+        padding: 1.5rem;
+    }
+    @include large-mobile {
+        padding: 1rem;
     }
 
     &__logo-role-container {
@@ -20,24 +26,24 @@
         justify-content: space-between;
     }
     &__role {
-        width: 50px;
+        width: 3.125rem;
     }
     &__league-logo {
-        width: 50px;
+        width: 3.125rem;
     }
     &__image {
-        height: 175px;
+        height: 10.9375rem;
         width: 100%;
     }
     &__next-image {
-        width: 30px;
-        height: 30px;
+        width: 1.875rem;
+        height: 1.875rem;
         position: absolute;
         right: -7%;
     }
     &__previous-image {
-        width: 30px;
-        height: 30px;
+        width: 1.875rem;
+        height: 1.875rem;
         position: absolute;
         left: -7%;
     }
@@ -52,6 +58,7 @@
     }
     &__first-name {
         @include names-td;
+
         margin: 0;
     }
     &__last-name {
@@ -62,7 +69,7 @@
         display: flex;
         gap: 1rem;
         justify-content: center;
-        align-items: center;
+        flex-wrap: wrap;
         margin: 1rem 0;
         position: relative;
     }
@@ -72,7 +79,7 @@
         margin: 0.5rem 1rem;
         flex-wrap: wrap;
         gap: 1rem;
-        border-top: 1px solid $gold;
+        border-top: 0.0625rem solid $gold;
         padding-top: 1rem;
     }
     &__card-info {
@@ -99,22 +106,36 @@
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5), -3px -3px 4px rgba(0, 0, 0, 0.5);
     flex-direction: column;
     width: 17.5%;
+    min-height: 35.3125rem;
     padding: 1rem;
     height: fit-content;
     transition: 0.4s;
-    border-width: 2px;
+    border-width: 0.125rem;
     border-style: solid;
     border-image: linear-gradient(to right, $gold, $medium-grey) 1;
 
     @include desktop-wide {
         width: 22%;
+
         flex-wrap: wrap;
     }
 
     @include desktop {
-        width: 36%;
+        width: 32%;
         margin: 1rem 0;
         flex-wrap: wrap;
+    }
+
+    @include tablet {
+        width: 60%;
+    }
+
+    @include large-mobile {
+        width: 90%;
+    }
+
+    @include mobile {
+        width: 100%;
     }
 
     &:hover {

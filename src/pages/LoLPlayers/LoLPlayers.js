@@ -11,6 +11,7 @@ import SUPP from "../../assets/roles/SUPPORT.png";
 import Navbar from "../../components/Navbar/Navbar";
 import Previous from "../../components/Previous/Previous";
 function LoLPlayers(props) {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [team, setTeam] = useState([]);
     const { teamId } = useParams();
 
@@ -37,7 +38,7 @@ function LoLPlayers(props) {
             return;
         }
         axios
-            .get(`http://localhost:8080/lol/teams/${selectedTeamId}`)
+            .get(`${API_URL}/lol/teams/${selectedTeamId}`)
             .then((response) => {
                 setTeam(response.data);
             })

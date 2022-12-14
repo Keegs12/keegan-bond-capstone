@@ -7,12 +7,13 @@ import PostAdd from "../../components/PostAdd/PostAdd";
 import "./LoL.scss";
 
 function LoL(props) {
+    const API_URL = process.env.REACT_APP_API_URL;
     const [articles, setArticles] = useState([]);
 
     const mainArticle = articles[0];
     useEffect(() => {
         axios
-            .get("http://localhost:8080/lol/articles")
+            .get(`${API_URL}/lol/articles`)
             .then((response) => {
                 setArticles(response.data);
             })

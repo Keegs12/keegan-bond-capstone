@@ -1,12 +1,13 @@
 import "./Input.scss";
 
-function Input({ name, label, type, placeholder, onChange, accept }) {
+function Input({ name, label, type, placeholder, onChange, accept, required }) {
     return (
         <div className="form-input-container">
             <label className="form-input-label" htmlFor={name}>
                 {label}
             </label>
             <input
+                required={required ? required : null}
                 className="form-input"
                 type={type}
                 id={name}
@@ -18,7 +19,7 @@ function Input({ name, label, type, placeholder, onChange, accept }) {
             {/* <div className="error-container">
                 <p
                     className={
-                        error ? "error-message --visible" : "error-message"
+                        value ? "error-message" : "error-message --visible"
                     }
                 >
                     This Field is required
