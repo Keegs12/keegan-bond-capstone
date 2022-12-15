@@ -16,15 +16,6 @@ function Input({ name, label, type, placeholder, onChange, accept, required }) {
                 onChange={onChange}
                 accept={accept}
             ></input>
-            {/* <div className="error-container">
-                <p
-                    className={
-                        value ? "error-message" : "error-message --visible"
-                    }
-                >
-                    This Field is required
-                </p>
-            </div> */}
         </div>
     );
 }

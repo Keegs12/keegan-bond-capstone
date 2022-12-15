@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../../components/Navbar/Navbar";
 import Previous from "../../components/Previous/Previous";
-function SpecificArticle(props) {
+function SpecificArticle() {
     const API_URL = process.env.REACT_APP_API_URL;
     const [article, setArticle] = useState([]);
     const { articleId } = useParams();
@@ -22,7 +22,7 @@ function SpecificArticle(props) {
                 alert(e);
             });
     }, [selectedArticleId]);
-    console.log(article);
+
     return (
         <>
             <Navbar />

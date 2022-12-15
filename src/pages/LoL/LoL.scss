@@ -38,6 +38,10 @@
     border-image: linear-gradient(0.25turn, $primary-red, $black);
     border-image-slice: 1;
 
+    @include desktop-wide {
+        margin: 2rem 5%;
+    }
+
     @include desktop {
         margin: 2rem 2rem;
     }

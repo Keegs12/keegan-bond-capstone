@@ -10,7 +10,7 @@ import ADC from "../../assets/roles/ADC.png";
 import SUPP from "../../assets/roles/SUPPORT.png";
 import Navbar from "../../components/Navbar/Navbar";
 import Previous from "../../components/Previous/Previous";
-function LoLPlayers(props) {
+function LoLPlayers() {
     const API_URL = process.env.REACT_APP_API_URL;
     const [team, setTeam] = useState([]);
     const { teamId } = useParams();

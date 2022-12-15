@@ -72,6 +72,10 @@ a {
         @include tablet {
             bottom: 17.0625rem;
         }
+
+        @include large-mobile {
+            bottom: 21.6875rem;
+        }
     }
     &__image {
         object-fit: fill;
@@ -92,6 +96,9 @@ a {
             bottom: 12.6875rem;
             font-size: 1.25rem;
         }
+        @include large-mobile {
+            bottom: 14.6875rem;
+        }
 
         &--hover {
             position: absolute;
@@ -106,6 +113,10 @@ a {
                 width: 100%;
                 bottom: 12.6875rem;
                 font-size: 1.25rem;
+            }
+
+            @include large-mobile {
+                bottom: 14.6875rem;
             }
         }
     }

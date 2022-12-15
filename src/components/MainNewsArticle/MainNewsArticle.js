@@ -25,11 +25,6 @@ function MainNewsArticle({ article }) {
             className={hover ? "Main-Article--active" : "Main-Article"}
             to={`/LoL/${article.id}`}
         >
-            {/* // <div
-        //     onMouseOver={handleMouseOver}
-        //     onMouseOut={handleMouseOut}
-        //     className={hover ? "Main-Article--active" : "Main-Article"}
-        // > */}
             <img
                 className="Main-Article__image"
                 src={article.image}
@@ -113,7 +108,6 @@ function MainNewsArticle({ article }) {
                     </div>
                 </div>
             </div>
-            {/* </div> */}
         </Link>
     );
 }

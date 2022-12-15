@@ -18,12 +18,6 @@ function GameCard({ game, wallpaper, title }) {
                 className={`card-${wallpaper}`}
                 to={`/${game}`}
             >
-                {/* <img className="card__wallpaper" src={wallpaper}></img> */}
-                {/* <div
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-                className={`card-${wallpaper}`}
-            > */}
                 <div className="card__info-container">
                     <h2 className="card__title">{title}</h2>
                     <p
@@ -36,7 +30,6 @@ function GameCard({ game, wallpaper, title }) {
                         Checkout the lastest and greatest news for {title}
                     </p>
                 </div>
-                {/* </div> */}
             </Link>
         </>
     );

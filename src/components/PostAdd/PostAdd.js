@@ -1,6 +1,6 @@
 import "./PostAdd.scss";
 import { Link } from "react-router-dom";
-function PostAdd(props) {
+function PostAdd() {
     return (
         <div className="PostAdd">
             <p className="PostAdd__description">

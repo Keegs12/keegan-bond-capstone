@@ -1,7 +1,7 @@
 import React from "react";
 import GameCard from "../../components/GameCard/GameCard";
 
-function HomePage(props) {
+function HomePage() {
     return (
         <section className="card-holder">
             <GameCard title="League of Legends" game="LoL" wallpaper={"LoL"} />

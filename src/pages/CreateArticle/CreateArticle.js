@@ -19,8 +19,6 @@ function CreateArticle({ userData }) {
 
         const authorValue =
             author || userData.first_name + " " + userData.last_name;
-        console.log(e.target.image.files[0]);
-        console.log(author);
         const formData = new FormData(e.target);
 
         formData.set("author", authorValue);

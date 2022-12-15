@@ -29,8 +29,6 @@ function App() {
         setLogin(false);
         return;
     };
-    console.log(login);
-    console.log(user);
 
     useEffect(() => {
         const token = sessionStorage.getItem("token");
@@ -50,7 +48,6 @@ function App() {
                 setUser(response.data);
             })
             .catch((error) => {
-                console.log(error);
                 setFailedAuth(true);
             });
     }, [login]);

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import PostAdd from "../../components/PostAdd/PostAdd";
 import "./LoL.scss";
 
-function LoL(props) {
+function LoL() {
     const API_URL = process.env.REACT_APP_API_URL;
     const [articles, setArticles] = useState([]);
 

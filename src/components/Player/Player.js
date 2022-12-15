@@ -2,7 +2,7 @@ import "./Player.scss";
 import arrowRight from "../../assets/icons/arrow-right-svgrepo-com.svg";
 import arrowLeft from "../../assets/icons/arrow-left-svgrepo-com.svg";
 import { useState } from "react";
-import LoL from "../../assets/logo/LoL.png";
+
 function Player({ player, role, team }) {
     let [slideIndex, setSlideIndex] = useState(0);
 

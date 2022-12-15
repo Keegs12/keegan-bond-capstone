@@ -21,11 +21,6 @@ function NewsArticles({ articles }) {
             className={hover ? "Articles --active" : "Articles"}
             to={`${articles.id}`}
         >
-            {/* <div
-                onMouseOver={handleMouseOver}
-                onMouseOut={handleMouseOut}
-                className={hover ? "Articles --active" : "Articles"}
-            > */}
             <div className="Articles__user-info-container">
                 <h2
                     className={
@@ -115,7 +110,6 @@ function NewsArticles({ articles }) {
                     src={articles.image}
                 ></img>
             </div>
-            {/* </div> */}
         </Link>
     );
 }
