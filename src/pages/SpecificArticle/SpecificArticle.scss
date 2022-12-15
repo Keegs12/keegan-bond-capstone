@@ -4,7 +4,7 @@
 @use "../../styles/partials/sizing" as *;
 
 .Specific-Article {
-    padding: 0 15%;
+    padding: 0 20%;
 
     @include desktop {
         padding: 0 5%;

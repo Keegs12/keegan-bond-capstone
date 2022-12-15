@@ -1,7 +1,7 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/responsive" as *;
 .LoL-Page {
-    padding: 0 5% 0 15%;
+    padding: 0 10% 0 10%;
 
     @include desktop-wide {
         padding: 0 5%;
@@ -31,7 +31,7 @@
 }
 
 .LoL__title {
-    margin: 2rem 5%;
+    margin: 2rem 8%;
     padding-bottom: 0.5rem;
     position: relative;
     border-bottom: 0.125rem solid transparent;

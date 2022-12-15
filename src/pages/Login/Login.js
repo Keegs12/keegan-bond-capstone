@@ -36,14 +36,14 @@ function Login({ updateLogin }) {
                     name="email"
                     placeholder="Please Enter your Email"
                     label="Email"
-                    required="true"
+                    required={true}
                 />
                 <Input
                     type="password"
                     name="password"
                     placeholder="Please Enter your Password"
                     label="Password"
-                    required="true"
+                    required={true}
                 />
 
                 <button className="Login__button">Login</button>

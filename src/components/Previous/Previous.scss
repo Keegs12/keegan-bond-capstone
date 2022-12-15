@@ -1,11 +1,16 @@
 @use "../../styles/partials/sizing" as *;
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/responsive" as *;
 .Previous {
     &__container {
         display: flex;
 
-        margin: 2rem 0;
+        margin: 2rem 3rem;
         gap: 1rem;
+
+        @include desktop-wide {
+            margin: 2rem 0;
+        }
     }
     &__title {
         @include page-header-td;

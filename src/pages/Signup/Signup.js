@@ -44,14 +44,14 @@ function Signup(props) {
                     name="first_name"
                     label="First Name"
                     placeholder="Enter your First Name"
-                    required="true"
+                    required={true}
                 />
                 <Input
                     type="text"
                     name="last_name"
                     label="Last Name"
                     placeholder="Enter your Last Name"
-                    required="true"
+                    required={true}
                 />
                 <Input
                     type="text"
@@ -64,21 +64,21 @@ function Signup(props) {
                     name="address"
                     label="Address"
                     placeholder="Enter your Address"
-                    required="true"
+                    required={true}
                 />
                 <Input
                     type="text"
                     name="email"
                     label="Email"
                     placeholder="Enter your Email"
-                    required="true"
+                    required={true}
                 />
                 <Input
                     type="password"
                     name="password"
                     label="Password"
                     placeholder="Enter your Password"
-                    required="true"
+                    required={true}
                 />
 
                 <button className="Signup__button" type="submit">

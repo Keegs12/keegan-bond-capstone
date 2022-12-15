@@ -2,7 +2,7 @@
 @use "../../styles/partials/responsive" as *;
 .Create-Article {
     width: 40%;
-    margin: auto;
+    margin: 2rem auto;
     padding: 1rem 1rem;
     background-color: white;
     border-radius: 0.25rem;
@@ -10,6 +10,7 @@
     border-style: solid;
     border-image: linear-gradient(to right, $primary-red, $black) 1;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(0, 0, 0, 0.5);
+
     @include desktop-wide {
         width: 60%;
     }

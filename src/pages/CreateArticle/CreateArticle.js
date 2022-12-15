@@ -22,15 +22,8 @@ function CreateArticle({ userData }) {
         console.log(e.target.image.files[0]);
         console.log(author);
         const formData = new FormData(e.target);
-        // formData.append("article_title", e.target.articleTitle.value);
-        // formData.append("description", e.target.description.value);
-        formData.set("author", authorValue);
-        // article_title: e.target.articleTitle.value,
-        // description: e.target.description.value,
-        // author: authorValue,
-        // formData.append("file", e.target.image.files[0]);
 
-        // console.log(formData.get("file"));
+        formData.set("author", authorValue);
 
         axios
             .post(`${API_URL}/lol/articles`, formData, {
@@ -43,19 +36,6 @@ function CreateArticle({ userData }) {
                 navigate("/LoL");
             })
             .catch((err) => alert(err));
-
-        // const newArticle = {
-        //     article_title: e.target.articleTitle.value,
-        //     description: e.target.description.value,
-        //     author: authorValue,
-        //     image: e.target.image.files[0],
-        // };
-
-        // axios
-        //     .post(`http://localhost:8080/lol/articles`, newArticle)
-        //     .catch((e) => {
-        //         console.log(e);
-        //     });
     };
     return (
         <>

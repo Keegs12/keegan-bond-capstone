@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Profile({ userData, logout }) {
+    
     const [failedAuth, setFailedAuth] = useState(false);
     let navigate = useNavigate();
     const handleLogout = () => {
