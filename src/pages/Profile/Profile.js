@@ -14,8 +14,7 @@ function Profile({ userData, logout }) {
         navigate("/");
     };
 
-    // logout(failedAuth);
-    // console.log(failedAuth);
+  
 
     if (failedAuth) {
         return (

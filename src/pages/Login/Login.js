@@ -3,12 +3,14 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Input from "../../components/Input/Input";
+import Popup from "../../components/Popup/Popup";
 function Login({ updateLogin }) {
     const API_URL = process.env.REACT_APP_API_URL;
     const [error, setError] = useState(false);
-    const navigate = useNavigate();
+    const [successLogin, setSuccessLogin] = useState(false);
 
     const handleSubmit = (e) => {
+        console.log(error);
         e.preventDefault();
         const loginUser = {
             email: e.target.email.value,
@@ -20,41 +22,56 @@ function Login({ updateLogin }) {
             .then((response) => {
                 sessionStorage.setItem("token", response.data.token);
                 updateLogin(loginUser);
-                navigate("/profile");
+                setSuccessLogin(true);
+
+                // navigate("/profile");
             })
             .catch((e) => {
                 setError(true);
-                alert(e);
             });
     };
     return (
-        <div className="Login">
-            <h2 className="Login__title">Login</h2>
-            <form className="Login__form" onSubmit={handleSubmit}>
-                <Input
-                    type="text"
-                    name="email"
-                    placeholder="Please Enter your Email"
-                    label="Email"
-                    required={true}
-                />
-                <Input
-                    type="password"
-                    name="password"
-                    placeholder="Please Enter your Password"
-                    label="Password"
-                    required={true}
-                />
+        <>
+            <div className="Login">
+                <h2 className="Login__title">Login</h2>
+                <form className="Login__form" onSubmit={handleSubmit}>
+                    <Input
+                        type="text"
+                        name="email"
+                        placeholder="Please Enter your Email"
+                        label="Email"
+                        required={true}
+                    />
+                    <Input
+                        type="password"
+                        name="password"
+                        placeholder="Please Enter your Password"
+                        label="Password"
+                        required={true}
+                    />
 
-                <button className="Login__button">Login</button>
-            </form>
-            <p>
-                Need an account?
-                <Link className="Login__link" to="/users/signup">
-                    Signup here
-                </Link>
-            </p>
-        </div>
+                    <button className="Login__button">Login</button>
+                </form>
+                <p>
+                    Need an account?
+                    <Link className="Login__link" to="/users/signup">
+                        Signup here
+                    </Link>
+                </p>
+            </div>
+
+            {successLogin ? (
+                <Popup
+                    open={true}
+                    text={
+                        "You have successfully logged in, You will now be directed to your profile"
+                    }
+                    directTo={"/profile"}
+                />
+            ) : (
+                ""
+            )}
+        </>
     );
 }
 

@@ -2,13 +2,16 @@ import "./CreateArticle.scss";
 import axios from "axios";
 import Input from "../../components/Input/Input";
 import Navbar from "../../components/Navbar/Navbar";
-import { useNavigate } from "react-router-dom";
+
 import { useState } from "react";
+import Popup from "../../components/Popup/Popup";
 function CreateArticle({ userData }) {
     const API_URL = process.env.REACT_APP_API_URL;
     const [author, setAuthor] = useState("");
     const [articleTitle, setArticleTitle] = useState("");
-    let navigate = useNavigate();
+    const [error, setError] = useState(false);
+    const [success, setSuccess] = useState(false);
+
     const handleInput = (e) => {
         setAuthor(e.target.value);
         setArticleTitle(e.target.value);
@@ -30,10 +33,9 @@ function CreateArticle({ userData }) {
                 },
             })
             .then((res) => {
-                alert("File Upload success");
-                navigate("/LoL");
+                setSuccess(true);
             })
-            .catch((err) => alert(err));
+            .catch((err) => setError(true));
     };
     return (
         <>
@@ -94,6 +96,16 @@ function CreateArticle({ userData }) {
                         </button>
                     </form>
                 </div>
+
+                {success ? (
+                    <Popup
+                        open={true}
+                        text="You have successfully created an article, you will be directed to the news page."
+                        directTo={"/LoL"}
+                    />
+                ) : (
+                    ""
+                )}
             </section>
         </>
     );

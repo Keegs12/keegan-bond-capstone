@@ -3,8 +3,8 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Input from "../../components/Input/Input";
-
-function Signup(props) {
+import Popup from "../../components/Popup/Popup";
+function Signup() {
     const API_URL = process.env.REACT_APP_API_URL;
     let navigate = useNavigate();
     const [error, setError] = useState("");
@@ -26,8 +26,7 @@ function Signup(props) {
             .then((response) => {
                 setSuccess(true);
                 setError("");
-                alert("Successfully Registered");
-                navigate("/users/login");
+
                 e.target.reset();
             })
             .catch((e) => {
@@ -91,6 +90,17 @@ function Signup(props) {
                     Log in here
                 </Link>
             </p>
+            {success ? (
+                <Popup
+                    open={true}
+                    text={
+                        "You have successfully signed up, you will now be directed to the login page"
+                    }
+                    directTo={"/users/login"}
+                />
+            ) : (
+                ""
+            )}
         </div>
     );
 }
